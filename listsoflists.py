@@ -103,18 +103,32 @@ IRow[5] = [3]
 IRow[6] = [6]
 IRow[7] = [1]
 
-Column0 = [ARow[0],BRow[0], CRow[0], DRow[0],ERow[0], FRow[0],GRow[0],HRow[0], IRow[0]]
-Column1 = [ARow[1],BRow[1], CRow[1], DRow[1],ERow[1],FRow[1],GRow[1],HRow[1], IRow[1]]
-Column2 = [ARow[2],BRow[2], CRow[2], DRow[2],ERow[2], FRow[2],GRow[2],HRow[2], IRow[2]]
-Column3 = [ARow[3],BRow[3], CRow[3], DRow[3],ERow[3], FRow[3],GRow[3],HRow[3], IRow[3]]
-Column4 = [ARow[4],BRow[4], CRow[4], DRow[4],ERow[4], FRow[4],GRow[4],HRow[4], IRow[4]]
-Column5 = [ARow[5],BRow[5], CRow[5], DRow[5],ERow[5], FRow[5],GRow[5],HRow[5], IRow[5]]
-Column6 = [ARow[6],BRow[6], CRow[6], DRow[6],ERow[6], FRow[6],GRow[6],HRow[6], IRow[6]]
-Column7 = [ARow[7],BRow[7], CRow[7], DRow[7],ERow[7], FRow[7],GRow[7],HRow[7], IRow[7]]
-Column8 = [ARow[8],BRow[8], CRow[8], DRow[8],ERow[8], FRow[8],GRow[8],HRow[8], IRow[8]]
+Column0 = [ARow[0], BRow[0], CRow[0], DRow[0], ERow[0], FRow[0], GRow[0], HRow[0], IRow[0]]
+Column1 = [ARow[1], BRow[1], CRow[1], DRow[1], ERow[1], FRow[1], GRow[1], HRow[1], IRow[1]]
+Column2 = [ARow[2], BRow[2], CRow[2], DRow[2], ERow[2], FRow[2], GRow[2], HRow[2], IRow[2]]
+Column3 = [ARow[3], BRow[3], CRow[3], DRow[3], ERow[3], FRow[3], GRow[3], HRow[3], IRow[3]]
+Column4 = [ARow[4], BRow[4], CRow[4], DRow[4], ERow[4], FRow[4], GRow[4], HRow[4], IRow[4]]
+Column5 = [ARow[5], BRow[5], CRow[5], DRow[5], ERow[5], FRow[5], GRow[5], HRow[5], IRow[5]]
+Column6 = [ARow[6], BRow[6], CRow[6], DRow[6], ERow[6], FRow[6], GRow[6], HRow[6], IRow[6]]
+Column7 = [ARow[7], BRow[7], CRow[7], DRow[7], ERow[7], FRow[7], GRow[7], HRow[7], IRow[7]]
+Column8 = [ARow[8], BRow[8], CRow[8], DRow[8], ERow[8], FRow[8], GRow[8], HRow[8], IRow[8]]
 
-print(Column0)
 TotalbyColumns= [Column0, Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8]
+
+Box0 = [ARow[0], BRow[0], CRow[0], ARow[1], BRow[1], CRow[1], ARow[2], BRow[2], CRow[2]]
+Box1 = [DRow[0], ERow[0], FRow[0], DRow[1], ERow[1], FRow[1], DRow[2], ERow[2], FRow[2]]
+Box2 = [GRow[0], HRow[0], IRow[0], GRow[1], HRow[1], IRow[1], GRow[2], HRow[2], IRow[2]]
+Box3 = [ARow[3], BRow[3], CRow[3], ARow[4], BRow[4], CRow[4], ARow[5], BRow[5], CRow[5]]
+Box4 = [DRow[3], ERow[3], FRow[3], DRow[4], ERow[4], FRow[4], DRow[5], ERow[5], FRow[5]]
+Box5 = [GRow[3], HRow[3], IRow[3], GRow[4], HRow[4], IRow[4], GRow[5], HRow[5], IRow[5]]
+Box6 = [ARow[6], BRow[6], CRow[6], ARow[7], BRow[7], CRow[7], ARow[8], BRow[8], CRow[8]]
+Box7 = [DRow[6], ERow[6], FRow[6], DRow[7], ERow[7], FRow[7], DRow[8], ERow[8], FRow[8]]
+Box8 = [GRow[6], HRow[6], IRow[6], GRow[7], HRow[7], IRow[7], GRow[8], HRow[8], IRow[8]]
+
+TotalbyBox = [Box0, Box1, Box2, Box3, Box4, Box5, Box6, Box7, Box8]
+print(Box0)
+
+
 
 
 # z = 0  #Get a list of the single digits and where they are in their lists.
@@ -143,33 +157,59 @@ TotalbyColumns= [Column0, Column1, Column2, Column3, Column4, Column5, Column6, 
 #       m +=1
 # print(ARow)
 
+# ###### Trying to get columns removed of singles####
+# z = 0  #Get a list of the single digits and where they are in their lists.
+# holder = []
+# while z<9:
+#       a = len(Column0[z])
+#       if a==1:
+#             holder.append(Column0[z])
+#       z +=1
+# print(holder, 'a') #holder is a list of single digits
+# v = len(holder)
+# m = 0
+# while m < v: #this removes the single digits from the row
+#       #print(holder[m][0])
+#       a = (holder[m][0])
+#       t = 0
+#       while t < 9:
+#             if len(Column0[t])>1:
+#                   if a in Column0[t]:
+#                         Column0[t].remove(a)
+#
+#                   t += 1
+#             else:
+#                   #print(ARow[t])
+#                   t += 1
+#       m +=1
+# #print(Column0)
+
 ###### Trying to get columns removed of singles####
 z = 0  #Get a list of the single digits and where they are in their lists.
 holder = []
 while z<9:
-      a = len(Column0[z])
+      a = len(Box0[z])
       if a==1:
-            holder.append(Column0[z])
+            holder.append(Box0[z])
       z +=1
 print(holder, 'a') #holder is a list of single digits
 v = len(holder)
 m = 0
 while m < v: #this removes the single digits from the row
-      print(holder[m][0])
+      #print(holder[m][0])
       a = (holder[m][0])
       t = 0
       while t < 9:
-            if len(Column0[t])>1:
-                  if a in Column0[t]:
-                        Column0[t].remove(a)
+            if len(Box0[t])>1:
+                  if a in Box0[t]:
+                        Box0[t].remove(a)
 
                   t += 1
             else:
                   #print(ARow[t])
                   t += 1
       m +=1
-print(Column0)
-
+print(Box0)
 
 
 
