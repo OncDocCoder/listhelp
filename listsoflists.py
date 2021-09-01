@@ -108,12 +108,26 @@ while z<9:
       if a==1:
             holder.append(ARow[z])
       z +=1
+
+    
 print(holder) #holder is a list of single digits
 v = len(holder)
 m = 0
-while m < v:
+while m < v: #this removes the single digits from the row
       print(holder[m][0])
+      a = (holder[m][0])
+      t = 0
+      while t < 9:
+            if len(ARow[t])>1:
+                  if a in ARow[t]:
+                        ARow[t].remove(a)
+                        #print(t, ARow[t])
+                  t += 1
+            else:
+                  #print(ARow[t])
+                  t += 1
       m +=1
+print(ARow)
 
 
 
